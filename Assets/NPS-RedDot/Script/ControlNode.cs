@@ -13,6 +13,7 @@ public class ControlNode : MonoBehaviour
     {
         if (RedDotManager.S && RedDotManager.S.Tree.ContainsKey(Id))
             Set(RedDotManager.S.Tree[Id].IsShow);
+        else content.SetActive(false);
     }
 
     public void Set(bool isShow)

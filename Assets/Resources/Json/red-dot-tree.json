@@ -1,0 +1,47 @@
+{
+  "id": "game",
+  "childs": [
+    {
+      "id": "splash",
+      "childs": []
+    },
+    {
+      "id": "menu",
+      "childs": [
+        {
+          "id": "shop",
+          "childs": []
+        },
+        {
+          "id": "inventory",
+          "childs": [
+            {
+              "id": "hero",
+              "childs": []
+            },
+            {
+              "id": "equipment",
+              "childs": []
+            }
+          ]
+        },
+        {
+          "id": "battle",
+          "childs": []
+        },
+        {
+          "id": "arena",
+          "childs": []
+        },
+        {
+          "id": "event",
+          "childs": []
+        }
+      ]
+    },
+    {
+      "id": "main",
+      "childs": []
+    }
+  ]
+}

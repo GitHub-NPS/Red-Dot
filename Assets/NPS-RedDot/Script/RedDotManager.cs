@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using System.Linq;
+using Newtonsoft.Json;
 
 public class RedDotManager : MonoBehaviour
 {
@@ -16,6 +17,38 @@ public class RedDotManager : MonoBehaviour
     {
         if (!S) S = this;
         DontDestroyOnLoad(gameObject);
+
+        Init();
+    }
+
+    private void Init()
+    {
+        var file = Resources.Load<TextAsset>("Json/red-dot-tree");
+        var obj = JsonConvert.DeserializeObject<Node>(file.text);
+        CreateNode(obj, null);
+    }
+
+    private void CreateNode(Node obj, string parent)
+    {
+        if (!Tree.ContainsKey(obj.id))
+        {
+            var node = new ModelNode(obj.id);
+            Tree.Add(obj.id, node);
+
+            foreach (var item in obj.childs)
+            {
+                CreateNode(item, obj.id);
+            }
+        }
+
+        if (parent != null && !Tree[obj.id].Parents.Contains(parent))
+        {
+            Tree[obj.id].Parents.Add(parent);
+            if (Tree.ContainsKey(parent) && !Tree[parent].Childs.Contains(obj.id))
+            {
+                Tree[parent].Childs.Add(obj.id);
+            }
+        }
     }
 
     public void UpdateTree(string id, string parent)
@@ -76,5 +109,43 @@ public class RedDotManager : MonoBehaviour
             ControlNode ctl = Node.GetComponent<ControlNode>();
             if (ctl != null && ctl.Id == id) ctl.Set(isShow);
         }
+    }
+
+    [Button]
+    public void Ping(bool isShow = true, params string[] ids)
+    {
+        for (int i = 0; i < ids.Length; i++)
+        {
+            ids[i] = ids[i].Replace("_sale", "");
+            if (isLog) Debug.Log("[Red-Dot] " + (isShow ? "ADD: " : "REMOVE: ") + ids[i]);
+
+            if (!Tree.ContainsKey(ids[i]))
+            {
+                int idx = -1;
+
+                idx = ids[i].IndexOf('#', idx + 1);
+                if (idx == -1) continue;
+                string parent = ids[i].Substring(0, idx);
+
+                while (idx != -1)
+                {
+                    idx = ids[i].IndexOf('#', idx + 1);
+
+                    string child = (idx > ids[i].Length || idx == -1) ? ids[i] : ids[i].Substring(0, idx);
+
+                    UpdateTree(child, parent);
+
+                    parent = child;
+                }
+            }
+
+            UpdateNode(ids[i], isShow, false);
+        }
+    }
+
+    private class Node
+    {
+        public string id;
+        public List<Node> childs;
     }
 }

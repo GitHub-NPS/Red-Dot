@@ -59,6 +59,7 @@
     <Compile Include="Assets\NPS-RedDot\Script\RedDotManager.cs" />
     <Compile Include="Assets\NPS-RedDot\Script\ModelNode.cs" />
     <Compile Include="Assets\NPS-RedDot\Script\ControlNode.cs" />
+    <Compile Include="Assets\NPS-RedDot\Demo\DemoNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Core\Packages\Sirenix\Assemblies\NoEmitAndNoEditor\Sirenix.Serialization.dll" />
