@@ -1,14 +1,36 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{E33920C2-3018-3E83-DFBA-A9CD99486E4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.CompatibilityLayer", "Sirenix.OdinInspector.CompatibilityLayer.csproj", "{51B12DCF-AEE0-7A79-DA66-AEFBA85BB1A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.CompatibilityLayer.Editor", "Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj", "{446F173D-185B-82EF-BDD3-A655F22408EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.Modules.UnityMathematics", "Sirenix.OdinInspector.Modules.UnityMathematics.csproj", "{3816271B-8D5B-7F5B-1934-2946993014D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{E33920C2-3018-3E83-DFBA-A9CD99486E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E33920C2-3018-3E83-DFBA-A9CD99486E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E33920C2-3018-3E83-DFBA-A9CD99486E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E33920C2-3018-3E83-DFBA-A9CD99486E4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B12DCF-AEE0-7A79-DA66-AEFBA85BB1A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B12DCF-AEE0-7A79-DA66-AEFBA85BB1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B12DCF-AEE0-7A79-DA66-AEFBA85BB1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B12DCF-AEE0-7A79-DA66-AEFBA85BB1A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{446F173D-185B-82EF-BDD3-A655F22408EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{446F173D-185B-82EF-BDD3-A655F22408EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{446F173D-185B-82EF-BDD3-A655F22408EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{446F173D-185B-82EF-BDD3-A655F22408EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3816271B-8D5B-7F5B-1934-2946993014D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3816271B-8D5B-7F5B-1934-2946993014D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3816271B-8D5B-7F5B-1934-2946993014D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3816271B-8D5B-7F5B-1934-2946993014D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
