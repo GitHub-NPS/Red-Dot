@@ -115,8 +115,7 @@ public class RedDotManager : MonoBehaviour
     public void Ping(bool isShow = true, params string[] ids)
     {
         for (int i = 0; i < ids.Length; i++)
-        {
-            ids[i] = ids[i].Replace("_sale", "");
+        {            
             if (isLog) Debug.Log("[Red-Dot] " + (isShow ? "ADD: " : "REMOVE: ") + ids[i]);
 
             if (!Tree.ContainsKey(ids[i]))
